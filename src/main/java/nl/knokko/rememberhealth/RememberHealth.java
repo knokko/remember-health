@@ -99,7 +99,7 @@ public class RememberHealth extends JavaPlugin implements Listener {
         }, 2); // Apparently, Bukkit needs 1 extra tick to fix its attribute modifiers
     }
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         playersHealth.put(player.getUniqueId(), player.getHealth());
